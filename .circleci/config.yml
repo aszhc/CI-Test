@@ -1,1 +1,17 @@
 version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/.CI-Golang
+    docker:
+      - image: "circleci/golang:1.15.13"
+    steps:
+      - checkout
+      - run: go mod tidy
+      - run: go build
+   # 没有测试
+
+workflows:
+  build:
+    jobs:
+      - build
