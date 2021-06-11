@@ -25,19 +25,9 @@ jobs:
             fi
       - run: echo "===部署完毕==="
 
+
+
 workflows:
-  version: 2.1
-  scheduled-workflow:
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only: master
+  build:
     jobs:
       - build
-
-#workflows:
-#  build:
-#    jobs:
-#      - build
