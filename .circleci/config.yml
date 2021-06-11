@@ -9,7 +9,6 @@ jobs:
       - checkout
       - run: go mod tidy
       - run: go build
-   # 没有测试
 
 workflows:
   build:
